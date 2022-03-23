@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio">
+  <ClassDiagramComponents>
+    <Class name="EjercicioPerroPersona" package="" visibility="public" xPosition="16.0" yPosition="20.0">
+      <Fields>
+        <Field name="main" type="Object" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Perro" package="" visibility="public" xPosition="16.0" yPosition="154.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="raza" type="Raza" visibility="private"/>
+        <Field name="edad" type="Integer" visibility="private"/>
+        <Field name="tamanio" type="Tamanio" visibility="private"/>
+        <Field name="duenio" type="Persona" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Persona" package="" visibility="public" xPosition="370.0" yPosition="58.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="Integer" visibility="private"/>
+        <Field name="documento" type="Integer" visibility="private"/>
+        <Field name="perro" type="Perro" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="Raza" package="" visibility="public" xPosition="424.0" yPosition="293.0">
+      <Literals>
+        <Literal name="BEAGLE"/>
+        <Literal name="DOGO_ARGENTINO"/>
+        <Literal name="DOVERMAN"/>
+        <Literal name="OVEJERO_ALEMAN"/>
+        <Literal name="PASTOR_BELGA"/>
+      </Literals>
+    </Enum>
+    <Class name="ServicesAdopt" package="" visibility="public" xPosition="16.0" yPosition="366.0">
+      <Fields>
+        <Field name="perros" type="ArrayList&lt;Perro&gt;" visibility="private"/>
+        <Field name="personas" type="ArrayList&lt;Persona&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearPersona" returnType="Persona" visibility="public"/>
+        <Method name="crearPerro" returnType="Perro" visibility="public"/>
+        <Method name="elegirPerro" returnType="Perro" visibility="public"/>
+        <Method name="mostrarPerros" returnType="String" visibility="public"/>
+        <Method name="mostrarPersonas" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="RAZA" source="Perro" target="Raza" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <HasRelation name="PERRO" source="Persona" target="Perro" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="duenio" source="Perro" target="Persona" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
