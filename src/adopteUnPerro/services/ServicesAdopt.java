@@ -81,7 +81,7 @@ public class ServicesAdopt {
      public boolean elegirPerro() {
           boolean coincide = false;
           for (Persona persona : personas) {
-               System.out.println(persona.getApellido() + ", " + persona.getNombre() + ": DNI:" + persona.getDocumento() + "\n");
+               System.out.println(persona.getApellido() + ", " + persona.getNombre() + ": DNI:" + persona.getDocumento());
           }
           System.out.println("Ingrese el DNI de la persona que va a adoptar:");
           int dni = scn.nextInt();
